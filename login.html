@@ -8,7 +8,7 @@
     <script>
         // JavaScript to handle form submission
         document.addEventListener('DOMContentLoaded', function() {
-            const form = document.querySelector('.login-container form');
+            const form = document.querySelector('form');
             form.addEventListener('submit', function(event) {
                 event.preventDefault(); // Prevent the default form submission
                 const username = form.querySelector('input[type="text"]').value;
@@ -23,6 +23,33 @@
                 }
             });
         });
+        // add one more constraint to the above code that the username should be at least 5 characters long and the password should be at least 8 characters long. If the constraints are not met, display an appropriate error message to the user.
+            document.addEventListener('DOMContentLoaded', function() {
+                const form = document.querySelector('form');
+                form.addEventListener('submit', function(event) {
+                    event.preventDefault(); // Prevent the default form submission
+                    const username = form.querySelector('input[type="text"]').value;
+                    const password = form.querySelector('input[type="password"]').value;
+                    
+                    if (username.length < 5) {
+                        alert('Username must be at least 5 characters long.');
+                        return;
+                    }
+                    
+                    if (password.length < 8) {
+                        alert('Password must be at least 8 characters long.');
+                        return;
+                    }
+                    
+                    // Here you can add your authentication logic
+                    if (username === 'admin' && password === 'password') {
+                        alert('Login successful!');
+                        // Redirect to another page or perform other actions
+                    } else {
+                        alert('Invalid username or password. Please try again.');
+                    }
+                });
+            });
     </script>
     <style>
         body {
