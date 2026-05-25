@@ -6,28 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <script>
-        // JavaScript to handle form submission
         document.addEventListener('DOMContentLoaded', function() {
             const form = document.querySelector('form');
             form.addEventListener('submit', function(event) {
-                event.preventDefault(); // Prevent the default form submission
+                event.preventDefault();
                 const username = form.querySelector('input[type="text"]').value;
                 const password = form.querySelector('input[type="password"]').value;
-                
-                // Here you can add your authentication logic
+
                 if (username === 'admin' && password === 'password') {
                     alert('Login successful!');
-                    // Redirect to another page or perform other actions
                 } else {
                     alert('Invalid username or password. Please try again.');
                 }
             });
         });
-        // add one more constraint to the above code that the username should be at least 5 characters long and the password should be at least 8 characters long. If the constraints are not met, display an appropriate error message to the user.
             document.addEventListener('DOMContentLoaded', function() {
                 const form = document.querySelector('form');
                 form.addEventListener('submit', function(event) {
-                    event.preventDefault(); // Prevent the default form submission
+                    event.preventDefault();
                     const username = form.querySelector('input[type="text"]').value;
                     const password = form.querySelector('input[type="password"]').value;
                     
@@ -40,11 +36,8 @@
                         alert('Password must be at least 8 characters long.');
                         return;
                     }
-                    
-                    // Here you can add your authentication logic
                     if (username === 'admin' && password === 'password') {
                         alert('Login successful!');
-                        // Redirect to another page or perform other actions
                     } else {
                         alert('Invalid username or password. Please try again.');
                     }
